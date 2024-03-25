@@ -1,5 +1,6 @@
 {:paths ["src" "resources"]
- :deps {org.clojure/clojurescript {:mvn/version "1.11.132"}}
+ :deps {org.clojure/clojurescript {:mvn/version "1.11.132"}
+        rum/rum {:mvn/version "0.12.11"}}
  :aliases
  {:repl
   {:extra-deps {org.clojure/tools.nrepl {:mvn/version "0.2.13"}
