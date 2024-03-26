@@ -62,11 +62,18 @@
                   (for [bg base-colors]
                     (table-color-row bg)))])
 
+(declare yaml-editor)
+(rum/defc yaml-editor []
+  [:textarea {:id "yaml-editor"
+              :style {:width "100%"
+                      :height "20rem"}}])
+
 (declare app)
 (rum/defc app < rum/reactive []
   [[:div
     [:p [:b "Colorscheme name:"] " " (:scheme (rum/react global-state))]
     [:p [:b "Colorscheme author"] " " (:author (rum/react global-state))]]
-   [:div.matrix (table)]])
+   [:div.matrix (table)]
+   (yaml-editor)])
 
 (rum/mount (app) (js/document.getElementById "app"))
